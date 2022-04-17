@@ -4,7 +4,7 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from "./context/user";
+import { UserProvider } from "./context/userContext";
 
 ReactDOM.render(
   <React.StrictMode>
