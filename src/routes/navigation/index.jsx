@@ -6,9 +6,13 @@ import { UserContext } from "../../context/userContext";
 
 import './styles.scss'
 import { signOutUser } from "../../utils/firebase/firebase";
+import CardIcon from "../../components/cart-icon";
+import CartDropdown from "../../components/cart-dropdown";
+import { CartContext } from "../../context/cartContext";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext)
+  const { isCartOpen } = useContext(CartContext)
 
   return (
     <>
@@ -28,7 +32,9 @@ const Navigation = () => {
               </Link>
             )
           }
+          <CardIcon />
         </div>
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </>
