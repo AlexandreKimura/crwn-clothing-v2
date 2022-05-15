@@ -9,7 +9,7 @@ import { UserProvider } from "./context/userContext";
 import { CategoriesProvider } from "./context/categoriesContext";
 import { CartProvider } from "./context/cartContext";
 
-import { store } from './store/store'
+import { store } from "./store/store";
 import { Provider } from "react-redux";
 
 ReactDOM.render(
@@ -17,11 +17,11 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
         {/* <UserProvider> */}
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
+        {/* <CategoriesProvider> */}
+        <CartProvider>
+          <App />
+        </CartProvider>
+        {/* </CategoriesProvider> */}
         {/* </UserProvider> */}
       </BrowserRouter>
     </Provider>
