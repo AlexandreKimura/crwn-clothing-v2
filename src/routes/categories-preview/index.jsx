@@ -5,15 +5,15 @@ import { CategoriesContext } from "../../context/categoriesContext";
 import { selectCategoriesMap } from "../../store/categories/categorySelector";
 
 const CategoriesPreview = () => {
-  const { categoriesMap } = useContext(CategoriesContext)
+  //const { categoriesMap } = useContext(CategoriesContext)
 
-  //const categoriesMap = useSelector(selectCategoriesMap)
-  
+  const categoriesMap = useSelector(selectCategoriesMap)
+
   return (
     <>
       {Object.keys(categoriesMap).map((title) => {
         const products = categoriesMap[title];
-        return <CategoryPreview key={title} title={title} products={products}/>
+        return <CategoryPreview key={title} title={title} products={products} />
       })}
     </>
   );

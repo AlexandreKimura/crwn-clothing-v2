@@ -7,7 +7,7 @@ export const CategoriesContext = createContext({
   categoriesMap: {}
 })
 
-export const CategoriesProvider = ({children}) => {
+export const CategoriesProvider = ({ children }) => {
   const [categoriesMap, setCategoriesMap] = useState({})
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const CategoriesProvider = ({children}) => {
 
     getCategoriesMap()
   }, [])
-  
+
   // useEffect(() => {
   //   addCollectionAndDocuments('categories', SHOP_DATA)
   // }, [])

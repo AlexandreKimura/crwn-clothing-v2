@@ -9,9 +9,9 @@ import './styles.scss'
 
 const Category = () => {
   const { category } = useParams()
-  const categoriesMap =  useSelector(selectCategoriesMap)
+  const categoriesMap = useSelector(selectCategoriesMap)
   //const { categoriesMap } = useContext(CategoriesContext)
-  const [ products, setProducts ] = useState(categoriesMap[category])
+  const [products, setProducts] = useState(categoriesMap[category])
 
   useEffect(() => {
     setProducts(categoriesMap[category])
@@ -22,7 +22,7 @@ const Category = () => {
       <h2 className='category-title'>{category.toUpperCase()}</h2>
       <div className='category-container'>
         {products && products.map((product) => {
-          return <ProductCard key={product.id} product={product}/>
+          return <ProductCard key={product.id} product={product} />
         })}
       </div>
     </>
