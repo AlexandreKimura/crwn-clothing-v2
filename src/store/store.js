@@ -1,9 +1,11 @@
-import { compose, legacy_createStore as createStore, applyMiddleware } from 'redux';
+import { compose, createStore, applyMiddleware } from 'redux';
 // import logger from 'redux-logger';
 
 import { rootReducer } from './rootReducer';
 
 const loggerMiddleware = (store) => (next) => (action) => {
+    console.log('store', store)
+    console.log('next', next)
     console.log('action', action)
     if (!action.type) {
         return next(action);
