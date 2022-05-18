@@ -105,7 +105,7 @@ export const createUserDocumentFromAuth = async (
       console.log("error creating the user", err.message);
     }
   }
-
+  console.log(userDocRef)
   return userDocRef;
 };
 
@@ -124,5 +124,5 @@ export const signOutUser = async () => {
 };
 
 export const onAuthStateChangedListener = (callback) => {
-  onAuthStateChanged(auth, callback);
+  return onAuthStateChanged(auth, callback);
 };

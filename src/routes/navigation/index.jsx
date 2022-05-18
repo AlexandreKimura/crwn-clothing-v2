@@ -15,6 +15,7 @@ import { selectCurrentUser } from "../../store/user/userSelector";
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser)
+  console.log('User logado', currentUser)
   //const { currentUser } = useContext(UserContext)
   const { isCartOpen } = useContext(CartContext)
 
