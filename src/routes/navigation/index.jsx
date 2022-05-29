@@ -1,23 +1,20 @@
 import { Outlet } from "react-router-dom";
-import { useContext } from "react";
 import { useSelector } from 'react-redux'
 
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg'
-import { UserContext } from "../../context/userContext";
 
 //import './styles.jsx'
 import { LogoContainer, NavigationContainer, NavLink, NavLinks } from './styles'
 import { signOutUser } from "../../utils/firebase/firebase";
 import CardIcon from "../../components/cart-icon";
 import CartDropdown from "../../components/cart-dropdown";
-import { CartContext } from "../../context/cartContext";
+import { selectIsCartOpen } from '../../store/cart/cartSelector'
+
 import { selectCurrentUser } from "../../store/user/userSelector";
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser)
-  console.log('User logado', currentUser)
-  //const { currentUser } = useContext(UserContext)
-  const { isCartOpen } = useContext(CartContext)
+  const isCartOpen = useSelector(selectIsCartOpen)
 
   return (
     <>
