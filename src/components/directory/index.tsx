@@ -1,8 +1,9 @@
+import { Key } from "react";
 import DirectoryItem from "../directory-item"
 
 import './styles.scss'
 
-const categories = [
+const categories: DirectoryProps[] = [
   {
     id: 1,
     title: "hats",
@@ -35,8 +36,15 @@ const categories = [
   },
 ];
 
+export type DirectoryProps = {
+  id: Key
+  title: string
+  imageUrl: string
+  route: string
+}
+
 const Directory = () => {
-  
+
   return (
     <div className="directory-container">
       {categories.map((category) => (
